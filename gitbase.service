@@ -1,0 +1,16 @@
+[Unit]
+Description=gitbase for git
+
+[Service]
+Type=simple
+User=root
+Group=root
+EnvironmentFile=-/etc/gitbase/gitbase
+ExecStart=/usr/bin/gitbase-linux server $OPTIONS
+Restart=always
+LimitAS=infinity
+LimitRSS=infinity
+LimitCORE=infinity
+LimitNOFILE=655360
+[Install]
+WantedBy=multi-user.target
